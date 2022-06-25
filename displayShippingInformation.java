@@ -1,21 +1,41 @@
 /*
 Name: Eric Thompson
-Purpose: Main class that creates the objects and prints the results
+Purpose: Main class that creates the objects and prints the results about shipping information
 Date Created: June 20, 2022
 */
-
+import java.util.Scanner;
 public class displayShippingInformation {
     public static void main(String[] args) {
 
-        GetTrackingNumber trackingNum = new GetTrackingNumber(); // Object
-        GetShippingInformation information = new GetShippingInformation("Bob Steller", "4562 Somewhere lane", "theCity", "theState", "Thezipcode"); //Object and Constructor arguments
+        Scanner keyboard = new Scanner(System.in); // Object to enter input
+        //Create variables
+        String fullName;
+        String address;
+        String city;
+        String state;
+        String zipCode;
 
-        System.out.println("Full Name: " + information.fullName);// print fullname
-        System.out.println("Address" + information.address);// print address
-        System.out.println("City: " + information.city); // print city
-        System.out.println("State: " + information.state); // print state
-        System.out.println("ZipCode: " + information.zipcode); // print zipcode
-        System.out.print("Shipping Code: ");
+
+        System.out.print("Enter your name: ");
+        fullName = keyboard.nextLine();
+        System.out.print("Enter Address: ");
+        address = keyboard.nextLine();
+        System.out.print("Enter your City: ");
+        city = keyboard.nextLine();
+        System.out.print("Enter your State: ");
+        state = keyboard.nextLine();
+        System.out.print("Enter your zipcode: ");
+        zipCode = keyboard.nextLine();
+
+        GetShippingInformation information = new GetShippingInformation(fullName, address, city, state, zipCode); //Object and Constructor- input with Scanner package arguments
+        GetTrackingNumber trackingNum = new GetTrackingNumber(); // Object with default constructor
+
+        System.out.println("\nFull Name: " + information.fullName);// get full name from 'GetshippingInformation' class then print full name
+        System.out.println("Address " + information.address);// get full name from 'GetshippingInformation' class then print address
+        System.out.println("City: " + information.city); // get full name from 'GetshippingInformation' class then print city
+        System.out.println("State: " + information.state); // get full name from 'GetshippingInformation' class then print state
+        System.out.println("ZipCode: " + information.zipcode); // get full name from 'GetshippingInformation' class then print zipcode
+        System.out.print("Shipping Number: "); //get full name from 'GetTrackingNumber' class then print Shipping Number
         trackingNum.shippingCode();
 
     }
