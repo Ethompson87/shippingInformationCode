@@ -1,6 +1,6 @@
 /*
 Author: Eric Thompson
-Purpose of Program: Creating Shipping tracking codes
+Purpose of Program: Creating Shipping tracking number
 Date Created: June 20, 2022
 */
 
