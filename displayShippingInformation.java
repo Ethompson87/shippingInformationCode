@@ -3,40 +3,69 @@ Name: Eric Thompson
 Purpose: Main class that creates the objects and prints the results about shipping information
 Date Created: June 20, 2022
 */
-import java.util.Scanner;
-public class displayShippingInformation {
-    public static void main(String[] args) {
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+public class displayShippingInformation extends JFrame {
 
-        Scanner keyboard = new Scanner(System.in); // Object to enter input
-        //Create variables
-        String fullName;
-        String address;
-        String city;
-        String state;
-        String zipCode;
+    private JTextField fullName = new JTextField(35);
+    private JTextField address = new JTextField(35);
+    private JTextField city = new JTextField(33);
+    private JTextField state = new JTextField(35);
+    private JTextField zipCode = new JTextField(35);
+    private JButton submitButton = new JButton("Submit");
+    private JButton cancelButton = new JButton("Cancel");
+    public displayShippingInformation(){
 
 
-        System.out.print("Enter your name: ");
-        fullName = keyboard.nextLine();
-        System.out.print("Enter Address: ");
-        address = keyboard.nextLine();
-        System.out.print("Enter your City: ");
-        city = keyboard.nextLine();
-        System.out.print("Enter your State: ");
-        state = keyboard.nextLine();
-        System.out.print("Enter your zipcode: ");
-        zipCode = keyboard.nextLine();
 
-        GetShippingInformation information = new GetShippingInformation(fullName, address, city, state, zipCode); //Object and Constructor- input with Scanner package arguments
-        GetTrackingNumber trackingNum = new GetTrackingNumber(); // Object with default constructor
+        // Create panel p1 to display information to be inputed
+        JPanel p1 = new JPanel();
+        p1.setLayout(new GridLayout(5,2,10,2));
+        p1.add(new JLabel("Full Name: "));
+        p1.add(new JLabel("Address: "));
+        p1.add(new JLabel("City: "));
+        p1.add(new JLabel("State: "));
+        p1.add(new JLabel("ZipCode"));
 
-        System.out.println("\nFull Name: " + information.fullName);// get full name from 'GetshippingInformation' class then print full name
-        System.out.println("Address " + information.address);// get full name from 'GetshippingInformation' class then print address
-        System.out.println("City: " + information.city); // get full name from 'GetshippingInformation' class then print city
-        System.out.println("State: " + information.state); // get full name from 'GetshippingInformation' class then print state
-        System.out.println("ZipCode: " + information.zipcode); // get full name from 'GetshippingInformation' class then print zipcode
-        System.out.print("Shipping Number: "); //get full name from 'GetTrackingNumber' class then print Shipping Number
-        trackingNum.shippingCode();
+        //Create panel p2 to display the text fields for the descriptions
+        JPanel p2 = new JPanel();
+        p2.setLayout(new GridLayout(5,1,10,2));
+        p2.add(fullName);
+        p2.add(address);
+        p2.add(city);
+        p2.add(state);
+        p2.add(zipCode);
 
+        JPanel title = new JPanel();
+        title.add(new JLabel("Enter Shipping Information"));
+
+        JPanel button = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        button.add(submitButton, BorderLayout.WEST);
+        button.add(cancelButton, BorderLayout.EAST);
+
+
+
+        add(p1, BorderLayout.WEST);
+        add(p2, BorderLayout.EAST);
+        add(title, BorderLayout.NORTH);
+        add(button, BorderLayout.SOUTH);
+
+        submitButton.addActionListener(new ButtonListener());
+
+        @Override
+        public void actionPerformed(ActionEvent e){
+
+        };
+    };
+
+    public static void main(String[] args){
+        displayShippingInformation gridFrame = new displayShippingInformation();
+        gridFrame.setTitle("Shipping Information");
+        gridFrame.setSize(500,250);
+        gridFrame.setResizable(false);
+        gridFrame.setLocationRelativeTo(null);
+        gridFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gridFrame.setVisible(true);
     }
 }

@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_6_26_2022_7_47_PM_[Changes]" date="1656287234553" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_26_2022_7_47_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/26/2022 7:47 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/shippingInformationCode/GetShippingInformation.class" />
+    <option name="AFTER_PATH" value="out/production/shippingInformationCode/GetShippingInformation.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_26_2022_7_47_PM_[Changes]/GetShippingInformation.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/shippingInformationCode/displayShippingInformation.class" />
+    <option name="AFTER_PATH" value="out/production/shippingInformationCode/displayShippingInformation.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_26_2022_7_47_PM_[Changes]/displayShippingInformation.class" />
+  </binary>
+</changelist>
